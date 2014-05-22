@@ -39,7 +39,7 @@ if (intval($mouse->request->request['number'])) {
 		<title>Get Elephant Joke</title>
 	</head>
 	<body>
-		<form action='nexmo.php' method='POST'>
+		<form action='index.php' method='POST'>
 			<h2>
 			<?php
 			if (!empty($errorMessage)) {
@@ -50,7 +50,7 @@ if (intval($mouse->request->request['number'])) {
 			?>
 			</h2>
 			<fieldset>
-				<label for='number'>Enter your number below and click the button.  Alternatively text ELEPAHNT to +12132633657 to get a joke.</label>
+				<label for='number'><strong>Enter your number below and click the button.  Alternatively text ELEPHANT to <em>+12132633657</em> to get a joke.</strong></label><br/>
 				<input id='number' name='number' type='text' value='<?php echo htmlentities($mouse->request->post['number'], ENT_QUOTES) ?>'>
 				<input id='submit' type='submit' value='Get an Elephant Joke!*'/>
 			</fieldset>
