@@ -50,16 +50,18 @@ class index {
 		$this->elephantJoke = new elephantJoke($this->apiKey, $this->apiSecret, $this->fromNumber);
 		$this->mouse = mouseHole::instance();
 
+		$callback = false;
 		if ($this->elephantJoke->isValidToNumber($this->mouse->request->post['msisdn'])) {
 			$this->elephantJoke->setToNumber($this->mouse->request->post['msisdn']);
+			$callback = true;
 		} elseif ($this->elephantJoke->isValidToNumber($this->mouse->request->post['number'])) {
 			$this->elephantJoke->setToNumber($this->mouse->request->post['number']);
 		}
 
-		$this->elephantJoke->sendElephantJoke();
+		$jokeReturn = $this->elephantJoke->sendElephantJoke();
 
-		if ($this->mouse->post['callback'] != 'true') {
-			$this->displayIndex();
+		if ($callback !== true) {
+			$this->displayIndex($jokeReturn);
 		}
 	}
 
@@ -67,12 +69,16 @@ class index {
 	 * Display the Main Index
 	 *
 	 * @access	public
+	 * @param	mixed	Return from sendElephantJoke().
 	 * @return	void	[Outputs to Screen]
 	 */
-	public function displayIndex() {
+	public function displayIndex($jokeReturn) {
 		$this->mouse->output->loadTemplate('index');
 
-		echo $this->mouse->output->index->index($form, $errorMessage);
+		$form = [];
+		$form['number'] = $this->elephantJoke->getToNumber();
+
+		echo $this->mouse->output->index->index($form, $jokeReturn);
 	}
 
 }

@@ -16,10 +16,10 @@ class skin_index {
 	 *
 	 * @access	public
 	 * @param	array	Array of saved form inputs.
-	 * @param	string	[Optional] Error Message
+	 * @param	string	[Optional] Error Message or JSON Return
 	 * @return	string	Finished HTML
 	 */
-	public function index($form, $errorMessage = null) {
+	public function index($form, $jokeReturn = null) {
 		$HTML .= "
 			<html>
 				<head>
@@ -28,9 +28,9 @@ class skin_index {
 				<body>
 					<form action='index.php' method='POST'>
 						<h2>";
-		if (!empty($errorMessage)) {
-			$HTML .= $errorMessage;
-		} elseif ($errorMessage !== null) {
+		if (!empty($jokeReturn) && is_string($jokeReturn)) {
+			$HTML .= $jokeReturn;
+		} elseif ($jokeReturn !== null) {
 			$HTML .= 'Joke sent!  It should arrive soon.  To end your Elephant Jokes&#8482; subscription at any time simply respond with an elephant.';
 		}
 		$HTML .= "

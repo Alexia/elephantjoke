@@ -105,6 +105,16 @@ class elephantJoke {
 	}
 
 	/**
+	 * Returns the to phone number.
+	 *
+	 * @access	public
+	 * @return	void
+	 */
+	public function getToNumber() {
+		return $this->to;
+	}
+
+	/**
 	 * Sets the to phone number.
 	 *
 	 * @access	public
