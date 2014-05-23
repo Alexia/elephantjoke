@@ -52,7 +52,7 @@ class elephantJoke {
 		$this->apiKey = $apikey;
 		$this->apiSecret = $apisecret;
 		$this->from = $from;
-		$this->to = intval(self:$:mouse->request->request['number']);
+		$this->to = intval($this->mouse->request->request['number']);
 	}
 
 	/**
