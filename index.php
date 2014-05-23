@@ -1,36 +1,72 @@
 <?php
-require_once(__DIR__.'/mouse/mouse.php');
-$mouse = mouseHole::instance(['curl' => 'mouseTransferCurl', 'request' => 'mouseRequestHttp']);
+/**
+ * Elephant Joke
+ * Index
+ *
+ * @author		Alexia E. Smith
+ * @copyright	(c) 2014 NoName Studios
+ * @license		LGPLv3.0
+ * @package		Elephant Joke
+ *
+**/
 
-$errorMessage = null;
-if (intval($mouse->request->request['number'])) {
-	$errorMessage = false;
-	$text = [
-		"Q: Why did the elephant paint its fingernails red?\nA:So it could hide in the strawberry patch.",
-		"Q: How can you tell that an elephant is in the bathtub with you?\nA:By the smell of peanuts on its breath.",
-		"Q: How can you tell that an elephant has been in your refrigerator/ice box?\nA:By the footprints in the butter/cheesecake/cream cheese.",
-		"Q: What time is it when an elephant sits on your fence?\nA:Time to build a new fence."
-	];
+class index {
+	/**
+	 * API Key
+	 *
+	 * @var		string
+	 */
+	private $apiKey = '944d02e0';
 
-	$textKey = array_rand($text);
+	/**
+	 * API Secret
+	 *
+	 * @var		string
+	 */
+	private $apiSecret = '04afbc9d';
 
-	$fields = [
-		'api_key'		=> '944d02e0',
-		'api_secret'	=> '04afbc9d',
-		'text'			=> $text[$textKey],
-		'from'			=> 12132633657,
-		'to'			=> intval($mouse->request->request['number'])
-	];
+	/**
+	 * From Phone Number
+	 *
+	 * @var		string
+	 */
+	private $fromNumber = 12132633657;
 
-	$jsonReturn = $mouse->curl->post('https://rest.nexmo.com/sms/json?'.http_build_query($fields), $fields, ['headers' => ['Content-Type: application/x-www-form-urlencoded']], true);
+	/**
+	 * The elephantJoke class storage.
+	 *
+	 * @var		object
+	 */
+	private $elephantJoke;
 
-	$jsonReturn = @json_decode($jsonReturn, true);
-	if ($jsonReturn !== null) {
-		if ($jsonReturn['messages'][0]['status'] > 0) {
-			$errorMessage = 'There was an error return from the service: "'.$jsonReturn['messages'][0]['error-text'].'"';
+	/**
+	 * Constructor
+	 *
+	 * @access	public
+	 * @return	void
+	 */
+	public function __construct() {
+		
+		$this->elephantJoke = new elephantJoke($this->apiKey, $this->apiSecret, $this->fromNumber);
+		$this->mouse = mouseHole::instance();
+		$this->mouse->output->addTemplateFolder(__DIR__.'/templates');
+
+		if ($this->mouse->post['callback'] != 'true') {
+			$this->displayIndex();
 		}
-	} elseif ($jsonReturn === null) {
-		$errorMessage = 'There was no response from the service.  Please double check the internet connection.';
+	}
+
+	/**
+	 * Display the Main Index
+	 *
+	 * @access	public
+	 * @return	void	[Outputs to Screen]
+	 */
+	public function displayIndex() {
+		$this->mouse->output->loadTemplate('index');
+
+		$this->mouse->output->index->index($form, $errorMessage);
 	}
 }
+$index = new index();
 ?>

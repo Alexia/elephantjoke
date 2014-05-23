@@ -5,7 +5,7 @@
  *
  * @author		Alexia E. Smith
  * @copyright	(c) 2014 NoName Studios
- * @license		All Rights Reserved
+ * @license		LGPLv3.0
  * @package		Elephant Joke
  *
 **/
