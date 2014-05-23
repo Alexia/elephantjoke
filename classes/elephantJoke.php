@@ -104,7 +104,7 @@ class elephantJoke {
 			"Q: What do you get when you cross an elephant with a rhinoceros?\nA: Elephino.",
 			"Q: Why do elephants paint the soles of their feet yellow?\nA: So that they can hide upside-down in bowls of custard.",
 			"Q: How do you stop an elephant from charging?\nA: Take away his credit card.",
-			"Q: Why do elephants have trunks?\nA: Because they would look silly with glove compartments.";
+			"Q: Why do elephants have trunks?\nA: Because they would look silly with glove compartments.",
 			"Q: What do you get when you cross an elephant and a mountain climber?\nA: Zero - a mountain climber is a scaler.",
 			"Q: What is beautiful, gray and wears glass slippers?\nA: Cinderelephant."
 		];
