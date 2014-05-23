@@ -80,7 +80,33 @@ class elephantJoke {
 			"Q: What time is it when an elephant sits on your fence?\nA:Time to build a new fence.",
 			"Q: What do you get when you cross an elephant with a parrot?\nA:An animal that tells you everything it remembers!",
 			"Q: Why was the elephant afraid of the computer store?\nA:Because they sold the world's best mice.",
-			"Q: What do you call an elephant in a phone booth?\nA:Stuck!"
+			"Q: What do you call an elephant in a phone booth?\nA:Stuck!",
+			"Q: What do you call an elephant with a machine gun?\nA: Sir.",
+			"Q: Why is an elephant big, grey, and wrinkly?\nA: Because, if it was small, white and smooth it would be an Aspirin.",
+			"Q: What is gray and not there?\nA: No elephants.",
+			"Q: How do you get an elephant on top of an oak tree?\nA: Stand him on an acorn and wait fifty years.",
+			"Q: What's the similarity between an elephant and a plum?\nA: They're both purple, except for the elephant.",
+			"Q: What is convenient and weighs 20,000 pounds?\nA: An elephant six-pack.",
+			"Q: What do you get if you cross an elephant with a kangaroo?\nA: Big holes all over Australia.",
+			"Q: What do you call an elephant riding on a train?\nA: A passenger.",
+			"Q: What's gray, has two tusks, and weighs 3,000 pounds?\nA: A statue of a walrus.",
+			"Q: Why did all the elephants wear red sweatshirts?\nA: They were all on the same team.",
+			"Q: What has twelve legs, is pink, and chants, \"Na, na, na\"?\nA: Three pink elephants singing \"Hey Jude.\"",
+			"Q: What's the best way to make an elephant sculpture?\nA: Take a block of marble and a chisel, and chip away anything that doesn't look like elephant.",
+			"Q: Why did the elephant dry his dishes with a blue dish towel?\nA: Because they were wet.",
+			"Q: What kind of elephants live at the North Pole?\nA: Cold ones.",
+			"Q: How do you tell if there is an elephant in your bed?\nA: The big \"E\" on his pajamas.",
+			"Q: How do you tell if there is an elephant under your bed?\nA: The ceiling is REALLY close.",
+			"Q: What do you call two elephants on a bicycle?\nA: Optimistic! ",
+			"Q: What do you get if you take an elephant into the city?\nA: Free Parking.",
+			"Q: How do you know if there is an elephant in the pub?\nA: It's bike is outside.",
+			"Q: How many elephants does it take to change a light bulb?\nA: Don't be stupid, elephants can't change light bulbs.",
+			"Q: What do you get when you cross an elephant with a rhinoceros?\nA: Elephino.",
+			"Q: Why do elephants paint the soles of their feet yellow?\nA: So that they can hide upside-down in bowls of custard.",
+			"Q: How do you stop an elephant from charging?\nA: Take away his credit card.",
+			"Q: Why do elephants have trunks?\nA: Because they would look silly with glove compartments.";
+			"Q: What do you get when you cross an elephant and a mountain climber?\nA: Zero - a mountain climber is a scaler.",
+			"Q: What is beautiful, gray and wears glass slippers?\nA: Cinderelephant."
 		];
 
 		$textKey = array_rand($text);
