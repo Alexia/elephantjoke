@@ -89,7 +89,7 @@ class elephantJoke {
 			$fields = [
 				'api_key'		=> $this->apiKey,
 				'api_secret'	=> $this->apiSecret,
-				'text'			=> $this->elephantJokes(),
+				'text'			=> $this->generateElephantJoke(),
 				'from'			=> $this->from,
 				'to'			=> $this->to
 			];

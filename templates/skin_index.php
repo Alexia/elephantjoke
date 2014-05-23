@@ -44,6 +44,8 @@ class skin_index {
 				<a href='http://en.wikipedia.org/wiki/Elephant_joke'>Wikipedia: Elephant joke</a>
 			</body>
 		</html>";
+
+		return $HTML;
 	}
 }
 ?>

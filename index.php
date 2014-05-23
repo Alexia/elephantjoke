@@ -64,7 +64,7 @@ class index {
 	public function displayIndex() {
 		$this->mouse->output->loadTemplate('index');
 
-		$this->mouse->output->index->index($form, $errorMessage);
+		echo $this->mouse->output->index->index($form, $errorMessage);
 	}
 }
 $index = new index();
