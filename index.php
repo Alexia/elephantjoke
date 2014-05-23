@@ -49,7 +49,6 @@ class index {
 		require_once(__DIR__.'/classes/elephantJoke.php');
 		$this->elephantJoke = new elephantJoke($this->apiKey, $this->apiSecret, $this->fromNumber);
 		$this->mouse = mouseHole::instance();
-		$this->mouse->output->addTemplateFolder(__DIR__.'/templates');
 
 		if ($this->mouse->post['callback'] != 'true') {
 			$this->displayIndex();

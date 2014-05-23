@@ -48,7 +48,9 @@ class elephantJoke {
 		// Setup mouse
 		// TODO: Setup proper mouse support and stuff
 		require_once(__DIR__.'/../mouse/mouse.php');
-		$this->mouse = mouseHole::instance(['curl' => 'mouseTransferCurl', 'request' => 'mouseRequestHttp']);
+		$this->mouse = mouseHole::instance(['curl' => 'mouseTransferCurl', 'request' => 'mouseRequestHttp', 'output' => 'mouseOutputOutput']);
+		$this->mouse->output->addTemplateFolder(__DIR__.'/../templates');
+
 		$this->apiKey = $apikey;
 		$this->apiSecret = $apisecret;
 		$this->from = $from;
