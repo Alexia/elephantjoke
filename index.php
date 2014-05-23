@@ -50,8 +50,6 @@ class index {
 		$this->elephantJoke = new elephantJoke($this->apiKey, $this->apiSecret, $this->fromNumber);
 		$this->mouse = mouseHole::instance();
 
-		if
-
 		if ($this->elephantJoke->isValidToNumber($this->mouse->request->post['number'])) {
 			$this->elephantJoke->setToNumber($this->mouse->request->post['number']);
 
