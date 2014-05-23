@@ -51,8 +51,8 @@ class elephantJoke {
 		$this->mouse = mouseHole::instance(['curl' => 'mouseTransferCurl', 'request' => 'mouseRequestHttp']);
 		$this->apiKey = $apikey;
 		$this->apiSecret = $apisecret;
-		$this->from = $from
-		$this->to = intval(self:$:mouse->request->request['number'])
+		$this->from = $from;
+		$this->to = intval(self:$:mouse->request->request['number']);
 	}
 
 	/**
