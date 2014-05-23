@@ -77,15 +77,31 @@ class elephantJoke {
 	}
 
 	/**
+	 * Checks if the to number is valid.
+	 *
+	 * @access	public
+	 * @return	boolean
+	 */
+	public function isValidToNumber() {
+		$valid = false;
+		if (is_numeric($to)) {
+			$valid = true;
+		}
+
+		return $valid;
+	}
+
+	/**
 	 * Send the elephant joke
 	 *
-	 * @access public
-	 * @return mixed string || json data
+	 * @access	public
+	 * @param	
+	 * @return	mixed string || json data
 	 */
 	public function sendElephantJoke() {
 		$errorMessage = null;
 
-		if (is_numeric($to)) {
+		if ($this->isValidToNumber()) {
 			$fields = [
 				'api_key'		=> $this->apiKey,
 				'api_secret'	=> $this->apiSecret,
