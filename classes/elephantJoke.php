@@ -13,26 +13,36 @@
 class elephantJoke {
 	/**
 	 * Mouse
+	 *
+	 * @var		object
 	 */
 	private $mouse;
 
 	/**
-	 * API Key variable
+	 * API Key
+	 *
+	 * @var		string
 	 */
 	private $apiKey;
 
 	/**
-	 * API Secret variable
+	 * API Secret
+	 *
+	 * @var		string
 	 */
 	private $apiSecret;
 
 	/**
-	 * From variable
+	 * From Number
+	 *
+	 * @var		integer
 	 */
 	private $from;
 
 	/**
-	 * From variable
+	 * To Number
+	 *
+	 * @var		integer
 	 */
 	private $to;
 
@@ -54,7 +64,6 @@ class elephantJoke {
 		$this->apiKey = $apikey;
 		$this->apiSecret = $apisecret;
 		$this->from = $from;
-		$this->to = intval($this->mouse->request->request['number']);
 	}
 
 	/**
@@ -83,15 +92,27 @@ class elephantJoke {
 	 * Checks if the to number is valid.
 	 *
 	 * @access	public
+	 * @param	integer	To Number
 	 * @return	boolean
 	 */
-	public function isValidToNumber() {
+	public function isValidToNumber($toNumber) {
 		$valid = false;
-		if (is_numeric($to)) {
+		if (is_numeric($toNumber)) {
 			$valid = true;
 		}
 
 		return $valid;
+	}
+
+	/**
+	 * Sets the to phone number.
+	 *
+	 * @access	public
+	 * @param	integer	To Number
+	 * @return	void
+	 */
+	public function setToNumber($toNumber) {
+		$this->to = $toNumber;
 	}
 
 	/**
@@ -104,7 +125,7 @@ class elephantJoke {
 	public function sendElephantJoke() {
 		$errorMessage = null;
 
-		if ($this->isValidToNumber()) {
+		if ($this->isValidToNumber($this->to)) {
 			$fields = [
 				'api_key'		=> $this->apiKey,
 				'api_secret'	=> $this->apiSecret,
@@ -113,7 +134,7 @@ class elephantJoke {
 				'to'			=> $this->to
 			];
 
-			$jsonReturn = $mouse->curl->post('https://rest.nexmo.com/sms/json?'.http_build_query($fields), $fields, ['headers' => ['Content-Type: application/x-www-form-urlencoded']], true);
+			$jsonReturn = $this->mouse->curl->post('https://rest.nexmo.com/sms/json?'.http_build_query($fields), $fields, ['headers' => ['Content-Type: application/x-www-form-urlencoded']], true);
 
 			$jsonReturn = @json_decode($jsonReturn, true);
 
