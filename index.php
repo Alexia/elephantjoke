@@ -50,11 +50,13 @@ class index {
 		$this->elephantJoke = new elephantJoke($this->apiKey, $this->apiSecret, $this->fromNumber);
 		$this->mouse = mouseHole::instance();
 
-		if ($this->elephantJoke->isValidToNumber($this->mouse->request->post['number'])) {
+		if ($this->elephantJoke->isValidToNumber($this->mouse->request->post['msisdn'])) {
+			$this->elephantJoke->setToNumber($this->mouse->request->post['msisdn']);
+		} elseif ($this->elephantJoke->isValidToNumber($this->mouse->request->post['number'])) {
 			$this->elephantJoke->setToNumber($this->mouse->request->post['number']);
-
-			$this->elephantJoke->sendElephantJoke();
 		}
+
+		$this->elephantJoke->sendElephantJoke();
 
 		if ($this->mouse->post['callback'] != 'true') {
 			$this->displayIndex();
@@ -72,6 +74,7 @@ class index {
 
 		echo $this->mouse->output->index->index($form, $errorMessage);
 	}
+
 }
 $index = new index();
 ?>
