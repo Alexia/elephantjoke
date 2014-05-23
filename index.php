@@ -34,27 +34,3 @@ if (intval($mouse->request->request['number'])) {
 	}
 }
 ?>
-<html>
-	<head>
-		<title>Get Elephant Joke</title>
-	</head>
-	<body>
-		<form action='index.php' method='POST'>
-			<h2>
-			<?php
-			if (!empty($errorMessage)) {
-				echo $errorMessage;
-			} elseif ($errorMessage !== null) {
-				echo "Joke sent!  It should arrive soon.  To end your Elephant Jokes&#8482; subscription at any time simply respond with an elephant.";
-			}
-			?>
-			</h2>
-			<fieldset>
-				<label for='number'><strong>Enter your number below and click the button.  Alternatively text ELEPHANT to <em>+12132633657</em> to get a joke.</strong></label><br/>
-				<input id='number' name='number' type='text' value='<?php echo htmlentities($mouse->request->post['number'], ENT_QUOTES) ?>'>
-				<input id='submit' type='submit' value='Get an Elephant Joke!*'/>
-			</fieldset>
-		</form>
-		<a href='http://en.wikipedia.org/wiki/Elephant_joke'>Wikipedia: Elephant joke</a>
-	</body>
-</html>
