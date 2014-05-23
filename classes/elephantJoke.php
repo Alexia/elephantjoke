@@ -68,7 +68,10 @@ class elephantJoke {
 			"Q: Why did the elephant paint its fingernails red?\nA:So it could hide in the strawberry patch.",
 			"Q: How can you tell that an elephant is in the bathtub with you?\nA:By the smell of peanuts on its breath.",
 			"Q: How can you tell that an elephant has been in your refrigerator/ice box?\nA:By the footprints in the butter/cheesecake/cream cheese.",
-			"Q: What time is it when an elephant sits on your fence?\nA:Time to build a new fence."
+			"Q: What time is it when an elephant sits on your fence?\nA:Time to build a new fence.",
+			"Q: What do you get when you cross an elephant with a parrot?\nA:An animal that tells you everything it remembers!",
+			"Q: Why was the elephant afraid of the computer store?\nA:Because they sold the world's best mice.",
+			"Q: What do you call an elephant in a phone booth?\nA:Stuck!"
 		];
 
 		$textKey = array_rand($text);
